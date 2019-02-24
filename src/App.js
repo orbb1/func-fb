@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ListItem } from './ListItem';
 import './App.css';
 
 const hundred = [...Array(100)].map((_, i) => i);
@@ -17,12 +18,10 @@ class App extends Component {
   }
 
   render() {
-    const generateKey = (i) => `${Math.random()}-${i}`;
-
     return (
       <div className="App">
         <ul>
-          {this.state.hundred.map(v => <li key={generateKey(v)}>{v}</li>)}
+          {this.state.hundred.map(item => <ListItem text={item} />)}
         </ul>
       </div>
     );
